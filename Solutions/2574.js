@@ -1,23 +1,22 @@
 // Link: https://leetcode.com/problems/left-and-right-sum-differences/
 
-var leftRigthDifference = function (nums) {
+// optimised
+const leftRigthDifference = function (nums) {
   let result = [];
 
   let left = 0;
   let right = 0;
 
   for (var i = 0; i < nums.length; i++) {
-    right += nums[i];
+    right += nums[i]; // 25
   }
 
   console.log(nums);
 
   for (var i = 0; i < nums.length; i++) {
-    right -= nums[i];
-    console.log(nums[i], right);
-    result.push(Math.abs(left - right));
-    left += nums[i];
-    console.log(left);
+    right -= nums[i]; // 0
+    result.push(Math.abs(left - right)); // [0-15, 10-11, 14-3, 22-0]
+    left += nums[i]; // 25
   }
   return result;
 };
